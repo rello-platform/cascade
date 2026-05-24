@@ -119,3 +119,17 @@ threw), `200` `{ ok: true }` on success.
 ## License
 
 UNLICENSED — internal Rello Platform use only.
+
+## Local verification (pre-push hook)
+
+CI (`ci.yml`) was retired 2026-05-24 (GH-Actions retirement workstream). Verification
+now runs locally via a committed husky-style `.husky/pre-push` hook — the same
+`tsc --noEmit && npm run build && npm test` the workflow ran.
+
+The hook is **not** auto-installed (no `prepare`/`postinstall` script — this is a
+git-dep package and a lifecycle script would run in every consumer's install). Enable
+it once per clone:
+
+```sh
+git config core.hooksPath .husky
+```
