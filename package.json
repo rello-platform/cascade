@@ -22,7 +22,8 @@
   "scripts": {
     "compile": "tsc",
     "test": "tsc -p tsconfig.test.json && node --test dist-test/**/*.test.js",
-    "prepublishOnly": "npm run compile && npm test"
+    "prepublishOnly": "npm run compile && npm test",
+    "hooks": "git config core.hooksPath .husky || true"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
