@@ -1,6 +1,6 @@
 {
   "name": "@rello-platform/cascade",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Push/mirror primitives for cascading settings across Rello Platform spokes.",
   "type": "module",
   "main": "./dist/index.js",
@@ -20,9 +20,9 @@
     "node": ">=22"
   },
   "scripts": {
-    "build": "tsc",
+    "compile": "tsc",
     "test": "tsc -p tsconfig.test.json && node --test dist-test/**/*.test.js",
-    "prepublishOnly": "npm run build && npm test"
+    "prepublishOnly": "npm run compile && npm test"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
